@@ -14,6 +14,7 @@
 		62004D42297FE7880038FAD1 /* TamagotchiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62004D41297FE7880038FAD1 /* TamagotchiAppTests.swift */; };
 		62004D4C297FE7880038FAD1 /* TamagotchiAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62004D4B297FE7880038FAD1 /* TamagotchiAppUITests.swift */; };
 		62004D4E297FE7880038FAD1 /* TamagotchiAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62004D4D297FE7880038FAD1 /* TamagotchiAppUITestsLaunchTests.swift */; };
+		62004D5B297FE7D60038FAD1 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62004D5A297FE7D60038FAD1 /* Tamagotchi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		62004D47297FE7880038FAD1 /* TamagotchiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamagotchiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62004D4B297FE7880038FAD1 /* TamagotchiAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiAppUITests.swift; sourceTree = "<group>"; };
 		62004D4D297FE7880038FAD1 /* TamagotchiAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		62004D5A297FE7D60038FAD1 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				62004D32297FE7860038FAD1 /* ContentView.swift */,
 				62004D34297FE7870038FAD1 /* Assets.xcassets */,
 				62004D36297FE7870038FAD1 /* Preview Content */,
+				62004D5A297FE7D60038FAD1 /* Tamagotchi.swift */,
 			);
 			path = TamagotchiApp;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62004D33297FE7860038FAD1 /* ContentView.swift in Sources */,
+				62004D5B297FE7D60038FAD1 /* Tamagotchi.swift in Sources */,
 				62004D31297FE7860038FAD1 /* TamagotchiAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
