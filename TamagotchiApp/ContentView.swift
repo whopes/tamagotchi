@@ -11,19 +11,39 @@ struct ContentView: View {
     @State private var tamagotchi = Tamagotchi()
     var timeElapsed = 0
     
-        
+    let hungerTimer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
+    
+    let ageTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
+    
+    var isHungryForMeal: Bool {
+        return tamagotchi.hunger > 2 ? true : false
+    }
+    var isHungryForSnack: Bool {
+        return tamagotchi.hunger > 0 ? true : false
+    }
     
     var body: some View {
         VStack {
             Text("\(tamagotchi.displayStats())")
-                .padding()
+                .onReceive(hungerTimer) { _ in
+                    tamagotchi.hunger += 1
+                }
+                .onReceive(ageTimer) { _ in
+                    tamagotchi.age += 1
+                }
+
             
             Button("Feed Tamagotchi", action: {
                 tamagotchi.feedMeal()
             })
-            Button("Play Game", action: {
+                .disabled(!isHungryForMeal)
+            
+            Button("Feed Snack", action: {
                 tamagotchi.feedSnack()
             })
+                .disabled(!isHungryForSnack)
+            
+            //Button()
             
         }
     }
