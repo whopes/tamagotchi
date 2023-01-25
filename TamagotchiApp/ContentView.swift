@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var tamagotchi = Tamagotchi()
-    var timeElapsed = 0
     
     let hungerTimer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
     
     let ageTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
+    
+    let cleaningTimer = Timer.publish(every: Double.random(in: 40.0...90.0), on: .main, in: .common).autoconnect()
     
     var isHungryForMeal: Bool {
         return tamagotchi.hunger > 2 ? true : false
@@ -31,6 +32,9 @@ struct ContentView: View {
                 .onReceive(ageTimer) { _ in
                     tamagotchi.age += 1
                 }
+                .onReceive(cleaningTimer) { _ in
+                    tamagotchi.needsCleaning = true
+                }
 
             
             Button("Feed Tamagotchi", action: {
@@ -43,8 +47,16 @@ struct ContentView: View {
             })
                 .disabled(!isHungryForSnack)
             
-            //Button()
-            
+            Button("Play Game", action: {
+                var bodyTwo: some View {
+                    VStack {
+                        Text("Which way will Tamagotchi turn?")
+                        tamagotchi.playGame()
+                        
+                        //Button("Left", )
+                    }
+                }
+            } )
         }
     }
 }
